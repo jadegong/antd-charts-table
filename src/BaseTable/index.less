@@ -1,0 +1,32 @@
+@import '../../VueChart/src/theme/ui-light.less';
+.baseTable {
+  .ant-table th,
+  .ant-table tr,
+  .ant-table td {
+    a {
+      color: #77c5b7 !important;
+    }
+  }
+  .ant-table-row-indent + .ant-table-row-expand-icon {
+    color: @dark-blue11;
+  }
+
+  .ant-table-tbody > tr:nth-child(odd) > td {
+    background-color: @dark-blue13 !important;
+  }
+}
+.baseTable.striped {
+  .ant-table-thead > tr > th,
+  .ant-table-tbody > tr > td {
+    border-bottom: none !important;
+    text-align: center;
+  }
+
+  // .ant-table-tbody > tr:nth-child(odd) > td {
+  //     background-color: #1f2640 !important;
+  // }
+
+  // .ant-table-tbody > tr:nth-child(even) > td {
+
+  // }
+}

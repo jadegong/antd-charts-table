@@ -70,5 +70,9 @@
   },
   "authors": [
     "jadegong@sina.cn"
-  ]
+  ],
+  "dependencies": {
+    "@ant-design/icons": "^5.2.6",
+    "antd": "^5.11.0"
+  }
 }
