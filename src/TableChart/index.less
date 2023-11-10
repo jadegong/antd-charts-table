@@ -1,0 +1,34 @@
+@import '../ReactChart/src/theme/ui-light.less';
+
+.table-chart-wrapper {
+  position: relative;
+  padding: 10px;
+  box-sizing: content-box;
+}
+
+.table-chart-container {
+  height: 100%;
+
+  .table-chart-operator-wrapper {
+    height: 25px;
+
+    .table-chart-toolbar-icon-wrapper {
+      font-size: 16px;
+      cursor: pointer;
+      float: right;
+      margin-right: 8px;
+
+      &:first-child {
+        margin-right: 0;
+      }
+
+      &.active svg {
+        color: @dark-blue11;
+      }
+    }
+  }
+
+  .table-chart-content-container {
+    position: relative;
+  }
+}

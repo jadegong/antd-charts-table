@@ -1,12 +1,12 @@
 /**
  * 基础表格
  */
-import React, { type FC, useEffect, useState } from 'react';
-import { toolUtil } from '../utils/toolUtils'
+import React, { useEffect, useState, type FC } from 'react';
+import { toolUtil } from '../utils/toolUtils';
 
-import {
-  Table,
-} from 'antd'
+import { Table } from 'antd';
+
+import './index.less';
 
 /* interface BaseTablePropsOptionModel {
  *   showHeader: Boolean;
@@ -26,21 +26,23 @@ import {
 
 const BaseTable: FC<{ option: any }> = (props) => {
   // states
-  const [defaultOptions, setDefaultOptions] = useState(Object({
-    size: 'middle',
-    showHeader: true,
-    columns: [],
-    dataSource: [],
-    pagination: false,
-    scroll: {
-      x: undefined,
-      y: 100,
-    },
-    showLineNo: true,
-    onChange: () => {},
-    styleName: 'striped',
-    padding: 0,
-  }))
+  const [defaultOptions, setDefaultOptions] = useState(
+    Object({
+      size: 'middle',
+      showHeader: true,
+      columns: [],
+      dataSource: [],
+      pagination: false,
+      scroll: {
+        x: undefined,
+        y: 100,
+      },
+      showLineNo: true,
+      onChange: () => {},
+      styleName: 'striped',
+      padding: 0,
+    }),
+  );
 
   // props
   const {
@@ -57,22 +59,22 @@ const BaseTable: FC<{ option: any }> = (props) => {
       onChange: () => {},
       styleName: 'striped',
       padding: 0,
-    }
-  } = props
+    },
+  } = props;
 
   useEffect(() => {
-    let retOpt: {[key: string]: any} = {
+    let retOpt: { [key: string]: any } = {
       size: 'middle',
       pagination: false,
-    }
-    toolUtil.merge(retOpt, option, true)
+    };
+    toolUtil.merge(retOpt, option, true);
     if (retOpt.dataSource?.length > 0) {
       retOpt.dataSource.forEach((item: any, index: number) => {
         item.key = index;
-      })
+      });
     }
-    setDefaultOptions(retOpt)
-  }, [option])
+    setDefaultOptions(retOpt);
+  }, [option]);
 
   return (
     <Table
@@ -85,6 +87,6 @@ const BaseTable: FC<{ option: any }> = (props) => {
       onChange={defaultOptions.onChange}
       style={{ height: '100%', padding: defaultOptions.padding }}
     />
-  )
-}
+  );
+};
 export default BaseTable;
